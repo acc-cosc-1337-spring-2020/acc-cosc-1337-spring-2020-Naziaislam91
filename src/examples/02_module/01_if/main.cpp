@@ -1,5 +1,7 @@
 #include<iostream>
-#include "if.h"//to use is_even function here
+#include "if.h"
+
+//to use is_even function here
 
 using std::cout;
 using std::cin;
