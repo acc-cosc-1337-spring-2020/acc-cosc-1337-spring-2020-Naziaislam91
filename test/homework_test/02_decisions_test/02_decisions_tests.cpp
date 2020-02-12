@@ -15,9 +15,11 @@ TEST_CASE("Test get grade point function") {
 
 }
 
-TEST_CASE("Calculate GPA")
+TEST_CASE("Test calculate GPA")
 {
 	REQUIRE(calculate_gpa(12, 45.0) == 3.75);
 	REQUIRE(calculate_gpa(120, 390.0) == 3.25);
 	REQUIRE(calculate_gpa(90, 180.0) == 2.00);
+	REQUIRE(calculate_gpa(90, 0.0) == -1.00);
 }
+
