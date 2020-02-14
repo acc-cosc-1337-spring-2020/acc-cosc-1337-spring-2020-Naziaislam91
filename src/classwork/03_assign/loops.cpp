@@ -10,3 +10,17 @@ returns 120
 
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
+#include "loops.h"
+
+int factorial(int num) 
+{
+	int number = 1;
+
+	for (int i = 1; i <= num; ++i)
+	{
+	  number = number * i;
+	}
+	return number;
+}
+
+
