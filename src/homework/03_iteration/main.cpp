@@ -1,6 +1,11 @@
 //write include statements
+#include<iostream>
+#include dna.h
+#include<string>
+
 
 //write using statements
+using std::cout; using std::cin; using std::string;
 
 
 /*
@@ -12,5 +17,6 @@ user enters a y or Y.
 */
 int main() 
 {
+
 	return 0;
 }

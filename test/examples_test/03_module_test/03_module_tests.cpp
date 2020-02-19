@@ -2,6 +2,9 @@
 #include "catch.hpp"
 #include "while.h"
 #include "value_ref.h"
+#include "for_ranged.h"
+#include "vec.h"
+#include <string>
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -22,4 +25,35 @@ TEST_CASE("Test pass by val and ref function")
 	REQUIRE(num2 == 50);
 
 
+}
+
+TEST_CASE("test for ranged loop for value") {
+	std::string name = "joe";
+	loop_string_w_auto_value(name);
+
+	REQUIRE(name == "joe");
+
+}
+TEST_CASE("test for ranged loop for ref") {
+	std::string name = "joe";
+	loop_string_w_auto_ref(name);
+
+	REQUIRE(name == "zzz");
+
+}
+
+TEST_CASE("test FOR RANGED LOOP W AUTO BY VALUE")
+{
+	std::vector<int>  nums{ 9, 10,99,5 ,67 };
+	std::vector<int> expected{ 9, 10,99,5 ,67 };
+	loop_vector_w_auto(nums);
+	REQUIRE(nums == expected);
+	
+}
+TEST_CASE("test FOR RANGED LOOP W AUTO BY ref")
+{
+	std::vector<int>  nums{ 9, 10,99,5 ,67 };
+	std::vector<int> expected{ 0, 0 , 0, 0 ,0 };
+	loop_vector_w_auto_ref(nums);
+	REQUIRE(nums == expected);
 }
