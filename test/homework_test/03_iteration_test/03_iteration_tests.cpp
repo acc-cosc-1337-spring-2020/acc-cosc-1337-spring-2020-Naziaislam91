@@ -25,6 +25,8 @@ TEST_CASE("Verifying the Reverse string")
 TEST_CASE("Verify the complement")
 {
 	std::string dna = "AAAACCCGGT";
+	std::string dna1 = "CCCGGAAAAT";
 	REQUIRE(get_dna_complement(dna) == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement(dna1) == "ATTTTCCGGG");
 }
 

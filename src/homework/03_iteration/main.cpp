@@ -37,15 +37,19 @@ int main()
 		if (number == 1)
 		{
 			gc = get_gc_content(dna);
-			cout << gc;
+			cout << gc << "\n";
 			
 		}
 		else if (number == 2)
 		{
 			complement = get_dna_complement(dna);
-			cout << complement;
+			cout << complement << "\n";
 		}
-	}while ((choice == 'Y') || (choice == 'y')); // do the loop until user press Y or y.
+		cout << "Do you want to continue: ";
+		cin >> choice;
+
+	}while (choice == 'Y' || choice == 'y'); // do the loop until user press Y or y.
+	system("pause");
 
 	return 0;
 }
