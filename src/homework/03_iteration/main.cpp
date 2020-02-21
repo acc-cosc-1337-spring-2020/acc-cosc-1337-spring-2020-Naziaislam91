@@ -47,8 +47,8 @@ int main()
 		}
 		
 		
-			cout << "Do you want to continue: " << "\n";
-			cin >> choice;
+		cout << "Do you want to continue: " << "\n";
+		cin >> choice;
 		
 
 		
