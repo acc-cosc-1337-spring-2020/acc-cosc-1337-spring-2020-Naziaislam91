@@ -35,3 +35,4 @@ the number
 @param int integer value
 @return vector of ints containing prime values up to a value
 */
+int vector_of_primes(int numbers);

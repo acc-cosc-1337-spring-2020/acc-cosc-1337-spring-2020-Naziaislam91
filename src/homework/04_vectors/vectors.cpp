@@ -87,5 +87,9 @@ Example given number 10 returns a vector with elements 2,3,5,7,
 Make sure to use the is_prime function to determine if current 
 number is prime.
 */
+int vector_of_primes(int numbers)
+{
+
+}
 
 
