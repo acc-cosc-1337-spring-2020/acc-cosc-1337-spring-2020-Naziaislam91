@@ -17,30 +17,35 @@ Program continues until user decides to exit.
 */
 int main() 
 {
-	int number;
-	int prime_number;
-	bool complement;
-	bool prime = true;
-	cout << "Please enter the number 1 to execute get max from vector and 2 for get primes: " << "\n";
-	cin >> number;
-	if (number == 1)
+	char choice = 'y';
+	do
 	{
-		std::vector<int>maximum{ 8, 4, 20, 88, 66, 99 };
-		get_max_from_vector(maximum);
+		int number;
+		int prime_number =0;
+		bool complement;
+		
 
-	}
-	else if (number == 2)
-	{
-		cout << "Please enter the prime number: " << "\n";
-		cin >> prime_number;
-		is_prime(prime);
-		std::cout << prime << "\n";
+		cout << "Please enter the number 1 to execute get max from vector and 2 for get primes: " << "\n";
+		cin >> number;
+		if (number == 1)
+		{
+			std::vector<int>maximum{ 8, 4, 20, 88, 66, 99 };
+			get_max_from_vector(maximum);
+
+		}
+		else if (number == 2)
+		{
+			cout << "Please enter the prime number: " << "\n";
+			cin >> prime_number;
+			complement = is_prime(prime_number);
+			std::cout << complement << "\n";
+		}
 
 
-	}
-
-	
-	
+		cout << "Do you want to continue: " << "\n";
+		cin >> choice;
+	} while (choice == 'Y' || choice == 'y');
+	system("pause");
 	
 	return 0;
 

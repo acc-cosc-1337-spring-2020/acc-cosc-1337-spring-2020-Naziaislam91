@@ -3,7 +3,7 @@
 #include<iostream>
 
 
-using std::vector; using std::cout;
+using std::vector; using std::cout; using std::cin;
 /*
 Write a value return function get_max_from_vector with a const reference 
 vector of intsparameter that returns the max value in a vector
@@ -44,29 +44,35 @@ given a number returns true if prime or false if not prime
 bool is_prime(int prime_number) 
 {
 	//int prime = 0;
-	//bool flag = true; 
-	bool prime = true;
-	for (int i = 2; i <= prime_number / 2; ++i)
+	bool flag = true; 
+	
+	
+	for (int i = 2; i <= prime_number / 2; i++)
 	{
 		if (prime_number % i == 0)
 		{
-			prime = false;
+			
+			cout << "false";
+			flag = false;
+			//return flag;
 			break;
-	
 		}
+	   if(flag)
+		{
+			cout << "true";
+			break;
+			//return flag;
+		}
+	   else
+	   {
+		   cout << "false";
+		   break;
+		  // return flag;
+	   }
 	}
-
-	if (prime == 0)
-	{
-		cout << "true";
-		return true;
-
-	}
-	else
-	{
-		cout << "false";
-		return false;
-	}
+	return flag;
+	
+	
 	
 }
 
