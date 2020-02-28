@@ -16,7 +16,7 @@ vector of intsparameter that returns the max value in a vector
 
 int get_max_from_vector(const std::vector<int> &maximum)
 {
-	int c = 0;
+	int countmax = 0;
 	int max = maximum[0];
 	for (int i = 0; i < maximum.size(); ++i )
 	{
@@ -24,13 +24,13 @@ int get_max_from_vector(const std::vector<int> &maximum)
 		if (max <= maximum[i])
 		{
 			max = maximum[i];
-			c = max;
+			countmax = max;
 
 		}
 
 	}
-	std::cout << "Maximum number is: " << c;
-	return c;
+	std::cout << "Maximum number is: " << countmax;
+	return countmax;
 	
 }
 

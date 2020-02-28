@@ -23,10 +23,10 @@ int main()
 		int number;
 		int prime_number =0;
 		//std::vector<int>prime;
-		int c;
+		int countmax;
 		
 
-		cout << "Please enter the number 1 to execute get max from vector and 2 for get primes: " << "\n";
+		cout << "Please enter the number 1 to execute get max from vector and 2 for get primes: ";
 		cin >> number;
 		if (number == 1)
 		{
@@ -37,17 +37,17 @@ int main()
 		}
 		else if (number == 2)
 		{
-			cout << "Please enter the prime number: " << "\n";
+			cout << "Please enter the prime number: ";
 			cin >> prime_number;
 			std::vector<int>prime = vector_of_primes(prime_number);
-			for (auto act : prime)
+			for (auto prm : prime)
 			{
-				std::cout << act << "\n";
+				std::cout << prm << "\n";
 			}
 		}
 
 
-		cout << "\n" << "Do you want to continue: " << "\n";
+		cout << "\n" << "Do you want to continue: ";
 		cin >> choice;
 	} while (choice == 'Y' || choice == 'y');
 	system("pause");
