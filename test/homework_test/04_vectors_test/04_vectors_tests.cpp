@@ -25,7 +25,7 @@ TEST_CASE("Test for the maximum number")
 	
 }
 
-TEST_CASE("Test the prime numbers")
+TEST_CASE("Test the prime number")
 {
 	REQUIRE(is_prime(2) == true);
 	REQUIRE(is_prime(4) == false);
@@ -33,7 +33,10 @@ TEST_CASE("Test the prime numbers")
 	REQUIRE(is_prime(44) == false);
 
 }
+TEST_CASE("Test the prime number from whole numbers")
+{
 
+}
 
 
 

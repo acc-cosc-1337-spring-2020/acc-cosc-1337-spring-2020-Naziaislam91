@@ -35,10 +35,10 @@ int main()
 		}
 		else if (number == 2)
 		{
-			cout << "Please enter the prime number: " << "\n";
+			/*cout << "Please enter the prime number: " << "\n";
 			cin >> prime_number;
-			complement = is_prime(prime_number);
-			std::cout << complement << "\n";
+			complement = std::vector_of_primes(prime_number);
+			std::cout << complement << "\n";*/
 		}
 
 
