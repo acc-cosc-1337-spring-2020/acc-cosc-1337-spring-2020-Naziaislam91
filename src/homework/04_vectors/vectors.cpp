@@ -45,34 +45,15 @@ bool is_prime(int prime_number)
 {
 	//int prime = 0;
 	bool flag = true; 
-	
-	
-	for (int i = 2; i <= prime_number / 2; i++) // check the logic 
+	for (int i = 2; i < prime_number - 1 / 2; ++i)
 	{
 		if (prime_number % i == 0)
 		{
-			
-			//cout << "false";
 			flag = false;
-			//return flag;
 			break;
 		}
-	   if(flag)
-		{
-			//cout << "true";
-			break;
-			//return flag;
-		}
-	   else
-	   {
-		   //cout << "false";
-		   break;
-		  // return flag;
-	   }
 	}
 	return flag;
-	
-	
 	
 }
 
@@ -90,11 +71,12 @@ number is prime.
 std::vector<int> vector_of_primes(int prime_number) //check the logic too
 {
 	
-	std::vector<int>prime;
-	//num = is_prime(prime_number);
-	for (int i = 2; i <= prime_number; ++i)
+	std::vector<int>prime = {};
+	
+	//prime = is_prime(prime_number);
+	for (int i = 2; i < prime_number; i++)
 	{
-		if (is_prime(i))
+		if (is_prime(i) == true)
 		{
 			prime.push_back(i);
 

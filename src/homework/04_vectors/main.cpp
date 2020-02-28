@@ -22,7 +22,8 @@ int main()
 	{
 		int number;
 		int prime_number =0;
-		std::vector<int>prime;
+		//std::vector<int>prime;
+		int c;
 		
 
 		cout << "Please enter the number 1 to execute get max from vector and 2 for get primes: " << "\n";
@@ -31,6 +32,7 @@ int main()
 		{
 			std::vector<int>maximum{ 8, 4, 20, 88, 66, 99 };
 			get_max_from_vector(maximum);
+			
 
 		}
 		else if (number == 2)
@@ -38,7 +40,6 @@ int main()
 			cout << "Please enter the prime number: " << "\n";
 			cin >> prime_number;
 			std::vector<int>prime = vector_of_primes(prime_number);
-
 			for (auto act : prime)
 			{
 				std::cout << act << "\n";
@@ -46,7 +47,7 @@ int main()
 		}
 
 
-		cout << "Do you want to continue: " << "\n";
+		cout << "\n" << "Do you want to continue: " << "\n";
 		cin >> choice;
 	} while (choice == 'Y' || choice == 'y');
 	system("pause");

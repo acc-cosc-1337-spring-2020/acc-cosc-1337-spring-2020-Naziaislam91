@@ -45,7 +45,7 @@ int main()
 			complement = get_dna_complement(dna);
 			cout << complement << "\n";
 		}
-		cout << "Do you want to continue: ";
+		cout << "Do you want to continue: " << "\n";
 		cin >> choice;
 
 	}while (choice == 'Y' || choice == 'y'); // do the loop until user press Y or y.

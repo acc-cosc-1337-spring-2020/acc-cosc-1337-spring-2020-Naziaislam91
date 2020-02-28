@@ -33,11 +33,23 @@ TEST_CASE("Test the prime number")
 	REQUIRE(is_prime(44) == false);
 
 }
-TEST_CASE("Test the prime number from whole numbers")
+TEST_CASE("Test the prime number from number")
 {
+	
+	std::vector<int> prime_number{ 10 };
+	std::vector<int> expected{ 2,3,5,7 };
+	REQUIRE(vector_of_primes(10)== expected);
+	std::vector<int> prime_number1{ 50 };
+	std::vector<int> expected1{ 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47 };
+	REQUIRE(vector_of_primes(50) == expected1);
+
+
+	
+	
+	
+
 
 }
-
 
 
 
