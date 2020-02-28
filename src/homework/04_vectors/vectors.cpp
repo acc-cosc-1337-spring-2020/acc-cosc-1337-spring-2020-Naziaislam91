@@ -47,25 +47,25 @@ bool is_prime(int prime_number)
 	bool flag = true; 
 	
 	
-	for (int i = 2; i <= prime_number / 2; i++)
+	for (int i = 2; i <= prime_number / 2; i++) // check the logic 
 	{
 		if (prime_number % i == 0)
 		{
 			
-			cout << "false";
+			//cout << "false";
 			flag = false;
 			//return flag;
 			break;
 		}
 	   if(flag)
 		{
-			cout << "true";
+			//cout << "true";
 			break;
 			//return flag;
 		}
 	   else
 	   {
-		   cout << "false";
+		   //cout << "false";
 		   break;
 		  // return flag;
 	   }
@@ -87,7 +87,7 @@ Example given number 10 returns a vector with elements 2,3,5,7,
 Make sure to use the is_prime function to determine if current 
 number is prime.
 */
-std::vector<int> vector_of_primes(int prime_number)
+std::vector<int> vector_of_primes(int prime_number) //check the logic too
 {
 	
 	std::vector<int>prime;
