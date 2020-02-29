@@ -18,6 +18,7 @@ Program continues until user decides to exit.
 int main() 
 {
 	char choice = 'y';
+	std::vector<int>maximum{ 8, 4, 20, 88, 66, 99 };
 	do
 	{
 		int number;
@@ -30,8 +31,9 @@ int main()
 		cin >> number;
 		if (number == 1)
 		{
-			std::vector<int>maximum{ 8, 4, 20, 88, 66, 99 };
-			get_max_from_vector(maximum);
+			
+			auto max = get_max_from_vector(maximum);
+			cout << "Max is: " << max;
 			
 
 		}
@@ -50,7 +52,7 @@ int main()
 		cout << "\n" << "Do you want to continue: ";
 		cin >> choice;
 	} while (choice == 'Y' || choice == 'y');
-	system("pause");
+	
 	
 	return 0;
 

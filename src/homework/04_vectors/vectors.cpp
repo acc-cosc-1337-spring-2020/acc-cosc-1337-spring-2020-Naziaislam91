@@ -1,9 +1,8 @@
 #include "vectors.h"
 #include<vector>
-#include<iostream>
 
 
-using std::vector; using std::cout; using std::cin;
+using std::vector; 
 /*
 Write a value return function get_max_from_vector with a const reference 
 vector of intsparameter that returns the max value in a vector
@@ -20,7 +19,7 @@ int get_max_from_vector(const std::vector<int> &maximum)
 	int max = maximum[0];
 	for (int i = 0; i < maximum.size(); ++i )
 	{
-		std::cout << maximum[i] << "\n";
+
 		if (max <= maximum[i])
 		{
 			max = maximum[i];
@@ -29,7 +28,7 @@ int get_max_from_vector(const std::vector<int> &maximum)
 		}
 
 	}
-	std::cout << "Maximum number is: " << countmax;
+
 	return countmax;
 	
 }
