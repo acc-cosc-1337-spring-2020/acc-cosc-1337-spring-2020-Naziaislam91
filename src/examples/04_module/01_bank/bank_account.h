@@ -9,7 +9,8 @@ public:
 	void deposit(int amount);
 	void withdraw(int amount);
 	void open(int amount);
-
+	/*rectangle(int w, int h) : width{ w }, height{ h } {calculate_area();}
+	int get_area()const { return area; }*/
 
 private: 
 	int balance{0};
