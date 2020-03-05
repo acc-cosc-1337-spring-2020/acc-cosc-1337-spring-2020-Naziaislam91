@@ -15,7 +15,7 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main()
 {
-	int total;
+	/*int total;
 	std::vector<rectangle> area{ rectangle(4,5),rectangle(10,10), rectangle (100,10) };
 	
 	for (auto rec : area)
@@ -24,5 +24,6 @@ int main()
 	}
 	
 	return 0;
+	*/
 }
 
