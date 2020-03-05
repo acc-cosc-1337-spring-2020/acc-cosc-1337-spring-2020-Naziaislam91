@@ -31,3 +31,6 @@
 *.out
 *.app
 /.vs
+/out/build/x64-Debug/CMakeFiles
+/out/build/x64-Debug/CMakeCache.txt
+/out/build/x64-Debug
