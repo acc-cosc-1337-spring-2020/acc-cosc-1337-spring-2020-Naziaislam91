@@ -5,4 +5,35 @@
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
+TEST_CASE("Test can't call mark board before start game")
+{
+	TicTacToe game;
+	REQUIRE_THROWS_AS(game.mark_board(1), Error);
 
+}
+TEST_CASE("Test start game accepts only X or O") //confused with this statement
+{
+	TicTacToe game;
+	REQUIRE_THROWS_AS(game.start_game("X"), Error);
+	REQUIRE_THROWS_AS(game.start_game("O"), Error);
+}
+TEST_CASE("Test set first player to X")
+{
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(game.get_player() == "X");
+}
+TEST_CASE("Test set first player to O")
+{
+	TicTacToe game;
+	game.start_game("O");
+	REQUIRE(game.get_player() == "O");
+
+}
+TEST_CASE("Test start game with X game flow")
+{
+	TicTacToe game;
+	game.start_game("X");
+
+
+}
