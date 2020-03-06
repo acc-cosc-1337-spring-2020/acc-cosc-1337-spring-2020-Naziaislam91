@@ -27,6 +27,6 @@ int main()
 	cout << "The sum of the area: " << total;
 	
 	return 0;
-	
+	// ggd
 }
 

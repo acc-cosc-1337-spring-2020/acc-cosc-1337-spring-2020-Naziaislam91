@@ -16,4 +16,3 @@ TEST_CASE("testing the area")
 	REQUIRE(area1.get_area() == 100);
 	REQUIRE(area2.get_area() == 1000);
 }
-
