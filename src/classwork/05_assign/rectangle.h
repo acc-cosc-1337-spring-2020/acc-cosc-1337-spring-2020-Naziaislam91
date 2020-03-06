@@ -4,15 +4,18 @@ has one public function area that returns the area of the rectangle, and one pri
 that calculates area of the rectangle.  The class has 3 int private variables area, width, and height.
 */
 #include<string>
+#include<iostream>
 class rectangle 
 {
 public:
 	rectangle(int w, int h) : width{ w }, height{ h } {calculate_area();}
 	int get_area()const { return area; }
 
-	
+	/*friend void display_balance(const BankAccount& b); // friend is not a class function, it is a free function
+	friend std::ostream& operator <<(std::ostream& out, const BankAccount & b);
+	friend std::istream& operator>>(std::istream& in, BankAccount & b);*/
 
-	//int get_balance()const { return balance; }
+	friend std::ostream& operator<<(std::ostream& out, const rectangle & area);
 
 
 
@@ -22,13 +25,3 @@ private:
 	int height;
 	void calculate_area();
 };
-/*public:
-	BankAccount(int b) : balance{b} { }
-	int get_balance()const { return balance; }
-	void deposit(int amount);
-	void withdraw(int amount);
-
-
-private: 
-	int balance{0};
-*/

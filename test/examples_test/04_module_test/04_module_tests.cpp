@@ -58,3 +58,8 @@ TEST_CASE("test open deposit <25")
 	REQUIRE_THROWS_AS(account.open(24), Invalid);
 
 }
+TEST_CASE("Test static rate initialization")
+{
+	BankAccount account;
+	REQUIRE(account.get_rate() == 0.025);
+}

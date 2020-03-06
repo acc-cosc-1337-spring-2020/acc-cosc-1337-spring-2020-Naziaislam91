@@ -1,21 +1,23 @@
 #include "tic_tac_toe.h"
 #include <iostream>
 
-using std::cout; using std::cin;
+using std::cout; using std::cin; 
 int main() 
 {
 	//std::string first_player;
 	char choice = 'y';
 
-	
-
 	do 
 	{
 		try
 		{
+			
+			cout << "The first player" << "\n";
+			 
 			int position;
 			cout << "The user for a position: " << "\n";
 			cin >> position;
+			TicTacToe mark_board(int position);
 			
 			cout << "Do you want to continue: ";
 			cin >> choice;

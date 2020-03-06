@@ -8,6 +8,12 @@ int main()
 	/*BankAccount a(100);
 	cout << a.get_balance();*/ // when you call the constructor you need to ask like this 
 	BankAccount account(500);
+	std::cin >> account;
+	cout << account;
+	display_balance(account);
+
+
+
 	auto balance = account.get_balance();
 	cout << "Balace is: " << balance << "\n";
 
