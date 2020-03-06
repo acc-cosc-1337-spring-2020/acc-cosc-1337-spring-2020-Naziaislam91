@@ -13,7 +13,7 @@ void rectangle::calculate_area()
 }
 std::ostream& operator<<(std::ostream& out, const rectangle & a)
 {
-	cout << "Area is: " << a.area << "\n";
+	out << "Area is: " << a.area << "\n";
 	return out;
 }
 /*cout << "balance is" << b.balance << "\n";
