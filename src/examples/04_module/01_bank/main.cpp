@@ -1,10 +1,13 @@
-#include "bank_account.h"
+#include "checking_account.h"
 #include<iostream>
 
 using std::cout; using std::cin;
 int main()
 {
-	
+	CheckingAccount checking;
+	CheckingAccount checking1(90);
+
+	//checking.
 	/*BankAccount a(100);
 	cout << a.get_balance();*/ // when you call the constructor you need to ask like this 
 	BankAccount account(500);
