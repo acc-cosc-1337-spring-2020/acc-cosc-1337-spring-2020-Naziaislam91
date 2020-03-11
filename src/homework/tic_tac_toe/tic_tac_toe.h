@@ -48,6 +48,5 @@ public:
 	std::string get_message() const { return message; }
 
 private:
-	std::string message;
-	//class member variable 
+	std::string message; //class member variable 
 };
