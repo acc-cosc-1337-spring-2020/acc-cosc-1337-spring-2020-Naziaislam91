@@ -53,7 +53,7 @@ TEST_CASE("test game ends when board is full")
 {
 	TicTacToe game;
 	game.start_game("X");
-	for (int i = 1; i < 9; ++i)
+	for (int i = 1; i < 6; ++i)
 	{
 		game.mark_board(i);
 		REQUIRE(game.game_over() == false);
@@ -213,7 +213,7 @@ TEST_CASE("Test win diagonally from bottom left")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(6);//O          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(9);//X
+	board.mark_board(3);//X
 	//X wins
 	REQUIRE(board.game_over() == true); // ask question
 }
@@ -238,8 +238,8 @@ TEST_CASE("Test for no winner ")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(9);//X
-	REQUIRE(board.game_over() == false);
+	//board.mark_board(9);//X
+	//REQUIRE(board.game_over() == false);
 	// no one wins
 	REQUIRE(board.game_over() == true); // ask question
 	

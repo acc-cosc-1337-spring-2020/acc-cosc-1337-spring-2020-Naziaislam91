@@ -17,7 +17,7 @@ bool TicTacToe::game_over()
 		return true;
 		
 	}
-	return check_board_full();
+	return false;
 }
 
 
