@@ -15,14 +15,13 @@ int main()
 			cout << "The first player" << "\n";
 			cin >> firstplayer;
 			game.start_game(firstplayer);
+
 		
 		}
 		catch (Error e)
 		{
 			cout << e.get_message() << "\n";
 		}
-		
-
 		
 	}
 

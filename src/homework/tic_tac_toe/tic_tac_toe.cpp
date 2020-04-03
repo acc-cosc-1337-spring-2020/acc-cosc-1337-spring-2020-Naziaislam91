@@ -11,7 +11,7 @@ bool TicTacToe::game_over()
 		return true;
 		
 	}
-	else if(check_board_full() == true) // confused in this part (ask proffesor)
+	else if(check_board_full() == true) 
 	{
 		winner = 'C';
 		return true;
@@ -46,7 +46,7 @@ void TicTacToe::mark_board(int position)
 		throw Error("Must start game first.");
 
 	}
-	pegs[position - 1] = player;
+	pegs[position - 1] = player; // 
 	set_next_player();
 }
 
@@ -68,7 +68,7 @@ void TicTacToe::set_next_player()
 	{
 		player = "X";
 	}
-	//player = "X" ? "O" : "X";
+	
 }
 
 bool TicTacToe::check_board_full()
@@ -154,11 +154,11 @@ bool TicTacToe::check_diagonal_win()
 	{
 		return true;
 	}
-	else if (pegs[6] == "X" && pegs[4] == "X" && pegs[2] == "X")
+	else if (pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
 	{
 		return true;
 	}
-	else if (pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
+	else if (pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")
 	{
 		return true;
 	}

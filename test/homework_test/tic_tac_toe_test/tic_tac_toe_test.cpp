@@ -76,7 +76,9 @@ TEST_CASE("Test Mark Position accepts values from  1 to 9 only")
 	game.start_game("X");
 	REQUIRE_THROWS_AS(game.mark_board(0), Error);
 	REQUIRE_THROWS_AS(game.mark_board(10), Error);
-	game.mark_board(5); // don't know how to show not error
+	game.mark_board(5); 
+	
+
 
 }
 TEST_CASE("Test win by first column")
@@ -94,7 +96,7 @@ TEST_CASE("Test win by first column")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 
 }
 TEST_CASE("Test win by the second column")
@@ -112,7 +114,7 @@ TEST_CASE("Test win by the second column")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(8);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 }
 TEST_CASE("Test win by the third column")
 {
@@ -129,7 +131,7 @@ TEST_CASE("Test win by the third column")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 }
 TEST_CASE("Test win by first row")
 {
@@ -163,7 +165,7 @@ TEST_CASE("Test win by second row")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 }
 TEST_CASE("Test win by third row")
 {
@@ -180,7 +182,7 @@ TEST_CASE("Test win by third row")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 }
 TEST_CASE("Test win diagonally from top left")
 {
@@ -197,7 +199,7 @@ TEST_CASE("Test win diagonally from top left")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 
 }
 TEST_CASE("Test win diagonally from bottom left")
@@ -215,7 +217,7 @@ TEST_CASE("Test win diagonally from bottom left")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(3);//X
 	//X wins
-	REQUIRE(board.game_over() == true); // ask question
+	REQUIRE(board.game_over() == true); 
 }
 TEST_CASE("Test for no winner ")
 {
@@ -238,9 +240,9 @@ TEST_CASE("Test for no winner ")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//O
 	REQUIRE(board.game_over() == false);
-	//board.mark_board(9);//X
-	//REQUIRE(board.game_over() == false);
-	// no one wins
-	REQUIRE(board.game_over() == true); // ask question
+	board.mark_board(9);//X
+	REQUIRE(board.game_over() == true);
+	//no one wins
+	REQUIRE(board.game_over() == true); 
 	
 }
