@@ -34,6 +34,13 @@ void TicTacToe::start_game(std::string first_player)
 	player = first_player;
 	clear_board();
 }
+void TicTacToe::clear_board()
+{
+	for (auto &peg : pegs)
+	{
+		peg = " ";
+	}
+}
 
 void TicTacToe::mark_board(int position)
 {
@@ -49,15 +56,6 @@ void TicTacToe::mark_board(int position)
 	pegs[position - 1] = player; // 
 	set_next_player();
 }
-
-void TicTacToe::display_board() const
-{
-	for (int i = 0; i < 9; i += 3)
-	{
-		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-}
-
 void TicTacToe::set_next_player()
 {
 	if (player == "X")
@@ -68,8 +66,17 @@ void TicTacToe::set_next_player()
 	{
 		player = "X";
 	}
-	
+
 }
+void TicTacToe::display_board() const
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+	}
+}
+
+
 
 bool TicTacToe::check_board_full()
 {
@@ -178,10 +185,3 @@ void TicTacToe::set_winner()
 	}
 }
 
-void TicTacToe::clear_board()
-{
-	for (auto &peg : pegs)
-	{
-		peg = " ";
-	}
-}
