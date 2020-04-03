@@ -76,9 +76,8 @@ TEST_CASE("Test Mark Position accepts values from  1 to 9 only")
 	game.start_game("X");
 	REQUIRE_THROWS_AS(game.mark_board(0), Error);
 	REQUIRE_THROWS_AS(game.mark_board(10), Error);
-	game.mark_board(5); 
-	
-
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
 
 }
 TEST_CASE("Test win by first column")
