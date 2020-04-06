@@ -13,15 +13,18 @@ int main()
 	{
 		do 
 		{
-			try
+			while (!(firstplayer == "X" || firstplayer == "O"))
 			{
-				cout << "The first player" << "\n";
-				cin >> firstplayer;
-				game.start_game(firstplayer);
-			}
-			catch (Error e)
-			{
-				cout << e.get_message() << "\n";
+				try
+				{
+					cout << "The first player" << "\n";
+					cin >> firstplayer;
+					game.start_game(firstplayer);
+				}
+				catch (Error e)
+				{
+					cout << e.get_message() << "\n";
+				}
 			}
 		
 			do
