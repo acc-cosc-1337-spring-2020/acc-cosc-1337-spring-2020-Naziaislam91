@@ -25,4 +25,5 @@ void TicTacToeManager::update_winner_count(std::string winner)
 std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 {
 	// TODO: insert return statement here
+	return out;
 }
