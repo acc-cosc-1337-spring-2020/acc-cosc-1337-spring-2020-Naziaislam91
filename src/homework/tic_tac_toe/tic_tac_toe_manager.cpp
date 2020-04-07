@@ -3,7 +3,7 @@
 
 void TicTacToeManager::save_game(const TicTacToe b)
 {
-
+	
 }
 
 void TicTacToeManager::update_winner_count(std::string winner)
@@ -20,4 +20,9 @@ void TicTacToeManager::update_winner_count(std::string winner)
 	{
 		ties++;
 	}
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
+{
+	// TODO: insert return statement here
 }
