@@ -53,8 +53,11 @@ void TicTacToe::mark_board(int position)
 		throw Error("Must start game first.");
 
 	}
-	pegs[position - 1] = player; // 
-	set_next_player();
+	pegs[position - 1] = player; 
+	if (game_over() == false) // changing this statement for homework 8
+	{
+		set_next_player();
+	}
 }
 void TicTacToe::set_next_player()
 {
@@ -68,6 +71,7 @@ void TicTacToe::set_next_player()
 	}
 
 }
+
 void TicTacToe::display_board() const
 {
 	for (int i = 0; i < 9; i += 3)
@@ -75,6 +79,8 @@ void TicTacToe::display_board() const
 		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
 }
+
+
 
 
 

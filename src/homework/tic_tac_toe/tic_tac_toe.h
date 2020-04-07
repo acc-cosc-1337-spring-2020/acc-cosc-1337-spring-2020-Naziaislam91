@@ -3,6 +3,7 @@
 #include<vector>
 #include<iostream>
 
+
 class TicTacToe
 {
 	
@@ -14,6 +15,7 @@ public:
 	void display_board() const;
 	std::string get_winner() { return winner; }
 	
+	
 
 private:
 	bool check_board_full();
@@ -23,10 +25,12 @@ private:
 	bool check_diagonal_win();
 	void clear_board();
 	void set_next_player();
+	
 
 	std::vector<std::string> pegs{ 9, " " };
 	std::string winner;
 	std::string player;
+	
 };
 
 class Error
