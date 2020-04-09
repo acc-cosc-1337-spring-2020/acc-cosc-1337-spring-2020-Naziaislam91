@@ -2,7 +2,8 @@
 #include<string>
 #include<vector>
 #include<iostream>
-
+#ifndef TicTacToe_H
+#define TicTacToe_H
 
 class TicTacToe
 {
@@ -32,7 +33,10 @@ private:
 	std::string player;
 	
 };
+#endif //
 
+#ifndef Error_H
+#define Error_H
 class Error
 {
 public:
@@ -42,3 +46,4 @@ public:
 private:
 	std::string message; //class member variable 
 };
+#endif

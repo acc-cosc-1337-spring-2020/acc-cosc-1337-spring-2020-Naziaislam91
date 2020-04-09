@@ -1,5 +1,7 @@
 #include "tic_tac_toe.h"
-
+#ifndef TicTacToe_Manager_H 
+#define TicTacToe_Manager_H 
+#include<vector>
 class TicTacToeManager : public TicTacToe
 {
 public:
@@ -9,10 +11,11 @@ public:
 
 
 private:
-	std::vector<int> games;
+	std::vector<TicTacToe> games;
 	int x_win = 0;
 	int o_win = 0;
 	int ties = 0;
 	void update_winner_count(std::string winner);
 
 };
+#endif

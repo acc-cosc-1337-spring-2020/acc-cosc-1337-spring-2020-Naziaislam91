@@ -4,7 +4,8 @@
 class CheckingAccount : public BankAccount
 {
 public:
+	/*
 	CheckingAccount() = default; //default constructor
 	explicit CheckingAccount(int b) : BankAccount(b){}
-	void get_balance()const { return balance * (1 + get_rate()); }
+	void get_balance()const { return balance * (1 + get_rate()); } */
 };

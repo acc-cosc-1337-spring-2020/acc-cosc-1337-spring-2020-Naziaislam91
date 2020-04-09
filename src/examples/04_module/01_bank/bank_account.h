@@ -26,11 +26,11 @@ protected:
 	int get_area()const { return area; }*/
 
 private: 
-	int balance{0};
+/*	int balance{0};
 
 	const int min_balance_to_open{ 25 };
 	static double rate;
-	static double init_rate() { return .025; }
+	static double init_rate() { return .025; } */
 
 };
 #endif
