@@ -1,18 +1,21 @@
 
 #include "tic_tac_toe.h"
-#include <iostream>
+#include "tic_tac_toe_manager.h"
 
+#include <iostream>
 using std::cout; using std::cin;
 int main()
 {
+	TicTacToe game;
+	TicTacToeManager b;
 	std::string firstplayer;
 	std::string choice;
-	TicTacToe game;
+	int player;
 	bool winner;
 	do
 	{
-		do 
-		{
+		
+		
 			while (!(firstplayer == "X" || firstplayer == "O"))
 			{
 				try
@@ -26,32 +29,38 @@ int main()
 					cout << e.get_message() << "\n";
 				}
 			}
-		
 			do
 			{
-				try
-				{
-					int position;
-					cout << "The user for a position: " << "\n";
-					cin >> position;
-					game.mark_board(position);
-					game.display_board();
-					game.game_over();
-					winner = game.game_over();
-				}
-				catch (Error e)
-				{
-					cout << e.get_message() << "\n";
-				}
-			} while (winner == false); //until the winner is not found
-			cout << "The winner is: " << game.get_winner() << "\n";
+				cout << b;
+				cin >> game;
+				winner = game.game_over();
 
-	} while (!(firstplayer == "X" || firstplayer == "O"));
-		cout << "Do you want to continue: ";
-		cin >> choice;
+			} while(game.game_over() == false);
+				b.save_game(game);
+			//manager;
+			cout << "The winner is: " << b.get_winner() << "\n";
+			cout << "Do you want to continue: ";
+			cin >> choice;
+			/*do
+			{
 
-} while (choice == "Y" || choice == "y");
 
+
+				//game.display_board();
+				game.game_over();
+				winner = game.game_over();
+
+
+
+				while (winner == false); //until the winner is not found
+				cout << "The winner is: " << game.get_winner() << "\n";
+
+			} while (!(firstplayer == "X" || firstplayer == "O"));
+			cout << "Do you want to continue: ";
+			cin >> choice;
+		}*/
+	}while (choice == "Y" || choice == "y");
+	
 	return 0;
 }
 

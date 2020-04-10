@@ -54,10 +54,10 @@ void TicTacToe::mark_board(int position)
 
 	}
 	pegs[position - 1] = player; 
-	if (game_over() == false) // changing this statement for homework 8
+	/*if (game_over() == false) // changing this statement for homework 8
 	{
 		set_next_player();
-	}
+	}*/
 }
 void TicTacToe::set_next_player()
 {
@@ -72,13 +72,13 @@ void TicTacToe::set_next_player()
 
 }
 
-void TicTacToe::display_board() const
+/*void TicTacToe::display_board() const
 {
 	for (int i = 0; i < 9; i += 3)
 	{
 		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
-}
+}*/
 
 
 
@@ -190,4 +190,30 @@ void TicTacToe::set_winner()
 		winner = 'X';
 	}
 }
+std::istream & operator>>(std::istream & in, TicTacToe & b)
+{
+		int position;
+		cout << "The user for a position: " << "\n";
+		in >> position;
+		try
+		{
+			b.mark_board(position);
+		}
+		
+		catch (Error e)
+		{
+			cout << e.get_message() << "\n";
+		}
+		
+		return in;
+}
 
+std::ostream & operator>>(std::ostream & out,const TicTacToe & b)
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "\n";
+	}
+
+	return out;
+}

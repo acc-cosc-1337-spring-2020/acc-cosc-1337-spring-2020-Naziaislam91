@@ -1,6 +1,8 @@
-#include "tic_tac_toe.h"
 #ifndef TicTacToe_Manager_H 
 #define TicTacToe_Manager_H 
+
+#include "tic_tac_toe.h"
+#include<iostream>
 #include<vector>
 class TicTacToeManager : public TicTacToe
 {
