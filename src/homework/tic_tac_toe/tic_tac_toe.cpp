@@ -1,7 +1,5 @@
 #include "tic_tac_toe.h"
-#include<iostream>
-using std::cout;
-
+//using std::string;
 //cpp
 bool TicTacToe::game_over()
 {
@@ -9,13 +7,13 @@ bool TicTacToe::game_over()
 	{
 		set_winner();
 		return true;
-		
+
 	}
-	else if(check_board_full() == true) 
+	else if (check_board_full() == true)
 	{
 		winner = 'C';
 		return true;
-		
+
 	}
 	return false;
 }
@@ -31,7 +29,7 @@ void TicTacToe::start_game(std::string first_player)
 	{
 		throw Error("Player must be X or O");
 	}
-	player = first_player;
+	//player = first_player;
 	clear_board();
 }
 void TicTacToe::clear_board()
@@ -48,16 +46,17 @@ void TicTacToe::mark_board(int position)
 	{
 		throw Error("Position must be 1 to 9.");
 	}
-	if(player.empty())
+	if (player.empty())
 	{
 		throw Error("Must start game first.");
 
 	}
-	pegs[position - 1] = player; 
-	/*if (game_over() == false) // changing this statement for homework 8
+	pegs[position - 1] = player;
+
+	if (game_over() == false) // changing this statement for homework 8
 	{
 		set_next_player();
-	}*/
+	}
 }
 void TicTacToe::set_next_player()
 {
@@ -121,9 +120,9 @@ bool TicTacToe::check_column_win()
 	{
 		return true;
 	}
-	
-		return false;
-	
+
+	return false;
+
 }
 
 bool TicTacToe::check_row_win()
@@ -152,9 +151,9 @@ bool TicTacToe::check_row_win()
 	{
 		return true;
 	}
-	
-		return false;
-	
+
+	return false;
+
 }
 
 bool TicTacToe::check_diagonal_win()
@@ -176,8 +175,8 @@ bool TicTacToe::check_diagonal_win()
 		return true;
 	}
 
-		return false;
-	
+	return false;
+
 }
 void TicTacToe::set_winner()
 {
@@ -192,23 +191,15 @@ void TicTacToe::set_winner()
 }
 std::istream & operator>>(std::istream & in, TicTacToe & b)
 {
-		int position;
-		cout << "The user for a position: " << "\n";
-		in >> position;
-		try
-		{
-			b.mark_board(position);
-		}
-		
-		catch (Error e)
-		{
-			cout << e.get_message() << "\n";
-		}
-		
-		return in;
+	int position { 0 };
+	std::cout << "The user " << b.get_player() << " for the position" <<"\n";
+	in >> position;
+	b.mark_board(position);
+
+	return in;
 }
 
-std::ostream & operator>>(std::ostream & out,const TicTacToe & b)
+std::ostream & operator>>(std::ostream & out, const TicTacToe & b)
 {
 	for (int i = 0; i < 9; i += 3)
 	{
@@ -217,3 +208,4 @@ std::ostream & operator>>(std::ostream & out,const TicTacToe & b)
 
 	return out;
 }
+

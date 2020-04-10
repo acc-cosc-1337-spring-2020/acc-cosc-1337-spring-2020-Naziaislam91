@@ -1,15 +1,14 @@
 //h
-#ifndef TicTacToe_H
-#define TicTacToe_H
-
 #include<string>
 #include<vector>
 #include<iostream>
 
+#ifndef TicTacToe_H
+#define TicTacToe_H
 
 class TicTacToe
 {
-	
+
 public:
 	bool game_over();
 	void start_game(std::string first_player);
@@ -18,10 +17,10 @@ public:
 	//void display_board() const;
 	std::string get_winner() { return winner; }
 	friend std::istream & operator>>(std::istream & in, TicTacToe & b);
-	friend std::ostream & operator>>(std::ostream & out, const TicTacToe & b);
-	
-	
-	
+	friend std::ostream & operator>>(std::ostream & out, const TicTacToe & t);
+
+
+
 
 private:
 	bool check_board_full();
@@ -31,20 +30,22 @@ private:
 	bool check_diagonal_win();
 	void clear_board();
 	void set_next_player();
-	
+
 
 	std::vector<std::string> pegs{ 9, " " };
 	std::string winner;
 	std::string player;
-	
+
 };
 
+#endif
 
-
+#ifndef ERROR_H
+#define ERROR_H
 class Error
 {
 public:
-	Error(std::string msg) : message {msg} {}
+	Error(std::string msg) : message{ msg } {}
 	std::string get_message() const { return message; }
 
 private:

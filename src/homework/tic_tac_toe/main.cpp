@@ -1,68 +1,85 @@
-
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
-
 #include <iostream>
 using std::cout; using std::cin;
 int main()
 {
 	TicTacToe game;
-	TicTacToeManager b;
+	TicTacToeManager manager;
 	std::string firstplayer;
 	std::string choice;
 	int player;
-	bool winner;
-	do
-	{
-		
-		
-			while (!(firstplayer == "X" || firstplayer == "O"))
-			{
-				try
-				{
-					cout << "The first player" << "\n";
-					cin >> firstplayer;
-					game.start_game(firstplayer);
-				}
-				catch (Error e)
-				{
-					cout << e.get_message() << "\n";
-				}
-			}
-			do
-			{
-				cout << b;
-				cin >> game;
-				winner = game.game_over();
-
-			} while(game.game_over() == false);
-				b.save_game(game);
-			//manager;
-			cout << "The winner is: " << b.get_winner() << "\n";
-			cout << "Do you want to continue: ";
-			cin >> choice;
-			/*do
-			{
-
-
-
-				//game.display_board();
-				game.game_over();
-				winner = game.game_over();
-
-
-
-				while (winner == false); //until the winner is not found
-				cout << "The winner is: " << game.get_winner() << "\n";
-
-			} while (!(firstplayer == "X" || firstplayer == "O"));
-			cout << "Do you want to continue: ";
-			cin >> choice;
-		}*/
-	}while (choice == "Y" || choice == "y");
+	bool winner = true;
+	bool error = true;
+	char board = ' ';
 	
+	while (winner)
+	{
+
+		while (error)
+		{
+			cout << "Please enter X or O to start the game: ";
+			cin >> firstplayer;
+			try
+			{
+				game.start_game(firstplayer);
+				error = false;
+				cout << "\n";
+			}
+			catch (Error err_msg)
+			{
+				cout << err_msg.get_message();
+			}
+		}
+
+		try
+		{
+			cin >> game;
+			//cout << game;
+		}
+
+		catch (Error e)
+		{
+			cout << e.get_message();
+		}
+
+		if (game.game_over() == false)
+		{
+			cout << "\nDo you want to continue: ";
+			cin >> board;
+			std::cout << "\n";
+
+
+			if (board == 'n')
+			{
+				winner = false;
+			}
+			else winner = true;
+		}
+		else
+		{
+			manager.save_game(game);
+
+			cout << "\nPlayer " << game.get_winner() << "has won the game!";
+
+			cout << "\n\n" << manager;
+			std::cout << "\n Do you want to continue: ";
+			cin >> board;
+			std::cout << "\n";
+
+			error = true;
+			if (board == 'n')
+			{
+				winner = false;
+			}
+			else winner = true;
+		}
+	}
+
+
 	return 0;
 }
+
 
 
 
