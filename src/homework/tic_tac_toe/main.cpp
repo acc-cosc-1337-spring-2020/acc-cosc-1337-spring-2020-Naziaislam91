@@ -14,6 +14,8 @@ int main()
 	
 	do
 	{
+		
+
 		while (!(firstplayer == "X" || firstplayer == "O"))
 		{
 			try
@@ -31,7 +33,7 @@ int main()
 		}
 		do 
 		{
-
+			
 			std::cout << "The user " << game.get_player() << " for the position" << "\n";
 			cin >> position;
 			try
@@ -51,10 +53,14 @@ int main()
 		cout << "player " << game.get_winner() << " is the winner \n" <<"\n";
 		cout << manager;
 		//manager.save_game(game);
-		cout << "\nDo you want to continue: " <<"\n";
+		game.start_game(firstplayer);
+		cout << "Do you want to continue: " <<"\n";
 		cin >> choice;
 
-	} while (choice == "Y ");
+		cout << "The first player as X or O: " << "\n";
+		cin >> firstplayer;
+
+	} while (choice == "Y" || choice == "y");
 
 	return 0;
 }
