@@ -35,13 +35,13 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 	
 	for (auto game : manager.games)
 	{
-		out << "X wins: " << manager.x_win << "\n";
-		out << " O wins: " << manager.o_win << "\n";
-		out << " Tie: " << manager.ties;
-		//std::out << game;
+		
+		out << game;
 		//manager.display_board();
 		
 	}
-	
+	out << "\nX wins: " << manager.x_win << "\n";
+	out << " O wins: " << manager.o_win << "\n";
+	out << " Tie: " << manager.ties;
 	return out;
 }

@@ -1,83 +1,60 @@
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
 #include <iostream>
-#include<string>
+//#include<string>
 using std::cout; using std::cin;
 int main()
 {
 	TicTacToe game;
 	TicTacToeManager manager;
+	int position{ 0 };
 	std::string firstplayer;
 	std::string choice;
-	int player;
-	bool winner = true;
-	bool error = true;
-	char board = ' ';
+	bool winner;
 	
-	while (winner)
+	do
 	{
-
-		while (error)
+		while (!(firstplayer == "X" || firstplayer == "O"))
 		{
-			cout << "Please enter X or O to start the game: ";
-			cin >> firstplayer;
+			try
+			
+			{ 
+				cout << "The first player as X or O: " << "\n";
+				cin >> firstplayer;
+				game.start_game(firstplayer);
+			}
+			catch (Error e)
+			{
+				cout << e.get_message() << "\n";
+			}
+
+		}
+		do 
+		{
+
+			std::cout << "The user " << game.get_player() << " for the position" << "\n";
+			cin >> position;
 			try
 			{
-				game.start_game(firstplayer);
-				error = false;
-				cout << "\n";
+				game.mark_board(position);
+				std::cout << game;
+				game.game_over();
+				winner = game.game_over();
 			}
-			catch (Error err_msg)
+			catch(Error e)
 			{
-				cout << err_msg.get_message();
+				cout << e.get_message() << "\n";
 			}
-		}
+		} while (winner == false);
+		
+		cout << "player " << game.get_winner() << " is the winner";
+		
+		cout << manager;
+		manager.save_game(game);
+		cout << "\nDo you want to continue: ";
+		cin >> choice;
 
-		try
-		{
-			
-			cin >> game;
-			//cout << game;
-		}
-
-		catch (Error e)
-		{
-			cout << e.get_message();
-		}
-
-		if (game.game_over() == false)
-		{
-			cout << "\nDo you want to continue: ";
-			cin >> board;
-			std::cout << "\n";
-
-
-			if (board == 'n')
-			{
-				winner = false;
-			}
-			else winner = true;
-		}
-		else
-		{
-			manager.save_game(game);
-
-			cout << "\nPlayer " << game.get_winner() << "has won the game!";
-
-			cout << "\n\n" << manager;
-			std::cout << "\n Do you want to continue: ";
-			cin >> board;
-			std::cout << "\n";
-
-			error = true;
-			if (board == 'n')
-			{
-				winner = false;
-			}
-			else winner = true;
-		}
-	}
-
+	} while (choice == "Y ");
 
 	return 0;
 }

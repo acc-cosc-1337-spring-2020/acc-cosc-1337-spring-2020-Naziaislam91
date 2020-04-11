@@ -198,11 +198,14 @@ std::istream & operator>>(std::istream & in, TicTacToe & b)
 	std::cout << "The user " << b.get_player() << " for the position" <<"\n";
 	in >> position;
 	b.mark_board(position);
+	
+	
+
 
 	return in;
 }
 
-std::ostream & operator>>(std::ostream & out, const TicTacToe & b)
+std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {
 	for (int i = 0; i < 9; i += 3)
 	{
