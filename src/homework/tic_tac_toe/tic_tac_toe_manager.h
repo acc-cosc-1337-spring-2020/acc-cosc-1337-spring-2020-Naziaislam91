@@ -1,13 +1,16 @@
-#include "tic_tac_toe.h"
+
 #ifndef TicTacToe_Manager_H 
 #define TicTacToe_Manager_H 
-class TicTacToeManager : public TicTacToe
+#include "tic_tac_toe.h"
+#include<iostream>
+#include<string>
+class TicTacToeManager //: public TicTacToe
 {
 public:
 	void save_game(const TicTacToe b);
 	//friend std::ostream & operator << (std::ostream & out , const BankAccount & b );
 	friend std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager);
-
+	
 
 private:
 	std::vector<TicTacToe> games;

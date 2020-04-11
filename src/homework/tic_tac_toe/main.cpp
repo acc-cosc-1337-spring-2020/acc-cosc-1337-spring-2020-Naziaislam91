@@ -1,6 +1,7 @@
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
 #include <iostream>
+#include<string>
 using std::cout; using std::cin;
 int main()
 {
@@ -34,6 +35,7 @@ int main()
 
 		try
 		{
+			
 			cin >> game;
 			//cout << game;
 		}

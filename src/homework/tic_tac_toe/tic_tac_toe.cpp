@@ -1,5 +1,7 @@
 #include "tic_tac_toe.h"
-//using std::string;
+using std::string;
+#include<iostream>
+#include<string>
 //cpp
 bool TicTacToe::game_over()
 {
@@ -189,6 +191,7 @@ void TicTacToe::set_winner()
 		winner = 'X';
 	}
 }
+
 std::istream & operator>>(std::istream & in, TicTacToe & b)
 {
 	int position { 0 };
