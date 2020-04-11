@@ -46,12 +46,12 @@ int main()
 				cout << e.get_message() << "\n";
 			}
 		} while (winner == false);
-		
-		cout << "player " << game.get_winner() << " is the winner";
-		
-		cout << manager;
 		manager.save_game(game);
-		cout << "\nDo you want to continue: ";
+		cout << game;
+		cout << "player " << game.get_winner() << " is the winner \n" <<"\n";
+		cout << manager;
+		//manager.save_game(game);
+		cout << "\nDo you want to continue: " <<"\n";
 		cin >> choice;
 
 	} while (choice == "Y ");
