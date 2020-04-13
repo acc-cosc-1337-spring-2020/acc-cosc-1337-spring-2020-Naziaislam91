@@ -5,17 +5,18 @@
 using std::cout; using std::cin;
 int main()
 {
-	TicTacToe game;
+	
 	TicTacToeManager manager;
 	int position{ 0 };
-	std::string firstplayer;
+	
 	std::string choice;
 	bool winner;
 	
 	do
 	{
 		
-
+		TicTacToe game;
+		std::string firstplayer;
 		while (!(firstplayer == "X" || firstplayer == "O"))
 		{
 			try
@@ -34,13 +35,11 @@ int main()
 		do 
 		{
 			
-			std::cout << "The user " << game.get_player() << " for the position" << "\n";
-			cin >> position;
+			
 			try
 			{
-				game.mark_board(position);
+				cin >> game;
 				std::cout << game;
-				game.game_over();
 				winner = game.game_over();
 			}
 			catch(Error e)
@@ -51,16 +50,13 @@ int main()
 		manager.save_game(game);
 		cout << game;
 		cout << "player " << game.get_winner() << " is the winner \n" <<"\n";
-		cout << manager;
-		//manager.save_game(game);
-		game.start_game(firstplayer);
+		
 		cout << "Do you want to continue: " <<"\n";
 		cin >> choice;
 
-		cout << "The first player as X or O: " << "\n";
-		cin >> firstplayer;
-
 	} while (choice == "Y" || choice == "y");
+
+	cout << manager;
 
 	return 0;
 }
