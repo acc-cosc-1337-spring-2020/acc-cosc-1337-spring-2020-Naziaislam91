@@ -4,8 +4,8 @@
 class TicTacToeFour : public TicTacToe
 {
 public:
-	TicTacToeFour() = default; // default constructor
-	//TicTacToeFour(int b) : TicTacToe(b) {}
+	
+	TicTacToeFour() : TicTacToe(4) {}
 	
 
 
