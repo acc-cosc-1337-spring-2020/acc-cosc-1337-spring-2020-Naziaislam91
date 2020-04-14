@@ -9,6 +9,9 @@ class TicTacToe
 {
 	
 public:
+
+	//SomeConstructor(int s) :some_vector(s*s, " ") {}
+	TicTacToe (int size) : pegs(size*size, " ") {}
 	bool game_over();
 	void start_game(std::string first_player);
 	void mark_board(int position);
@@ -18,19 +21,24 @@ public:
 	
 	friend std::istream & operator>>(std::istream & in, TicTacToe & b);
 	friend std::ostream & operator<<(std::ostream & out, const TicTacToe & b);
-	
+protected:
+	std::vector<std::string> pegs{};
+	virtual bool check_column_win();
+	virtual bool check_row_win();
+	virtual bool check_diagonal_win(); // virtual overriddden function and able change the function.
+
 
 private:
 	bool check_board_full();
-	bool check_column_win();
-	bool check_row_win();
+	//bool check_column_win();
+	//bool check_row_win();
 	void set_winner();
-	bool check_diagonal_win();
+	//bool check_diagonal_win();
 	void clear_board();
 	void set_next_player();
 
 
-	std::vector<std::string> pegs{ 9, " " };
+	//std::vector<std::string> pegs{ 9, " " };
 	std::string winner;
 	std::string player;
 

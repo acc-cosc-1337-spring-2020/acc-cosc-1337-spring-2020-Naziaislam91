@@ -14,7 +14,8 @@ public:
 	
 
 private:
-	std::vector<TicTacToe> games;
+	//vector<reference_wrapper<BankAccount>> accounts; 
+	std::vector<std::reference_wrapper<TicTacToe>> games; //reference wrapper can copy vector and delete the number so that others can hold the numbers.
 	int x_win{ 0 };
 	int o_win{ 0 };
 	int ties{ 0 };

@@ -18,7 +18,7 @@ int main()
 		int x;
 		int o;
 		int t;
-		TicTacToe game;
+		//TicTacToe game;
 		std::string firstplayer;
 		while (!(firstplayer == "X" || firstplayer == "O"))
 		{
@@ -40,18 +40,18 @@ int main()
 			
 			
 			
-				cin >> game;
-				std::cout << game;
-				winner = game.game_over();
+				//cin >> game;
+				//std::cout << game;
+				//winner = game.game_over();
 			
 		} while (winner == false);
-		manager.save_game(game);
+		//manager.save_game(game);
 		cout << "\n";
 		cout << game;
 		
 		cout << "\n";
 		//manager.get_winner_total(x, o, t);
-		cout << "player " << game.get_winner() << " is the winner." <<"\n";
+		//cout << "player " << game.get_winner() << " is the winner." <<"\n";
 		manager.get_winner_total(x, o, t);
 		cout << "Do you want to continue: " <<"\n";
 		cin >> choice;
