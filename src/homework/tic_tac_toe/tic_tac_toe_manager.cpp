@@ -64,8 +64,8 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 }
 void TicTacToeManager::get_winner_total(int & x, int& o, int& t)
 {
-	std::cout << "\n";
+	
 	std::cout << "X wins: " << x_win << "\n";
-	std::cout << " O wins: " << o_win << "\n";
-	std::cout << " Tie: " << ties << "\n";
+	std::cout << "O wins: " << o_win << "\n";
+	std::cout << "Tie: " << ties << "\n";
 }
