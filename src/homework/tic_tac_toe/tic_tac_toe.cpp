@@ -194,14 +194,18 @@ void TicTacToe::set_winner()
 
 std::istream & operator>>(std::istream & in, TicTacToe & b)
 {
-	int position { 0 };
-	std::cout << "The user " << b.get_player() << " for the position" <<"\n";
-	in >> position;
-	b.mark_board(position);
-	
-	
-
-
+	try
+	{
+		int position{ 0 };
+		std::cout << "The user " << b.get_player() << " for the position" << "\n";
+		in >> position;
+		b.mark_board(position);
+		std::cout << "\n";
+	}
+	catch (Error e)
+	{
+		std::cout << e.get_message() << "\n";
+	}
 	return in;
 }
 
