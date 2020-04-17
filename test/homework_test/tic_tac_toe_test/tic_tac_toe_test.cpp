@@ -83,9 +83,9 @@ TEST_CASE("Test Mark Position accepts values from  1 to 9 only")
 	
 
 }
-TEST_CASE("Test win by first column")
+TEST_CASE("Test win by first column 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(1);//X        
@@ -102,9 +102,10 @@ TEST_CASE("Test win by first column")
 	REQUIRE(board.get_winner() == "X");
 
 }
-TEST_CASE("Test win by the second column")
+
+TEST_CASE("Test win by the second column 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(2);//X        
@@ -120,9 +121,9 @@ TEST_CASE("Test win by the second column")
 	REQUIRE(board.game_over() == true); 
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test win by the third column")
+TEST_CASE("Test win by the third column 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(3);//X        
@@ -138,9 +139,9 @@ TEST_CASE("Test win by the third column")
 	REQUIRE(board.game_over() == true); 
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test win by first row")
+TEST_CASE("Test win by first row 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(1);//X        
@@ -156,9 +157,9 @@ TEST_CASE("Test win by first row")
 	REQUIRE(board.game_over() == true); // ask question
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test win by second row")
+TEST_CASE("Test win by second row 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//X        
@@ -174,9 +175,9 @@ TEST_CASE("Test win by second row")
 	REQUIRE(board.game_over() == true); 
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test win by third row")
+TEST_CASE("Test win by third row 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//X        
@@ -192,9 +193,9 @@ TEST_CASE("Test win by third row")
 	REQUIRE(board.game_over() == true); 
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test win diagonally from top left")
+TEST_CASE("Test win diagonally from top left 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(1);//X        
@@ -211,9 +212,9 @@ TEST_CASE("Test win diagonally from top left")
 	REQUIRE(board.get_winner() == "X");
 
 }
-TEST_CASE("Test win diagonally from bottom left")
+TEST_CASE("Test win diagonally from bottom left 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(7);//X        
@@ -229,9 +230,9 @@ TEST_CASE("Test win diagonally from bottom left")
 	REQUIRE(board.game_over() == true); 
 	REQUIRE(board.get_winner() == "X");
 }
-TEST_CASE("Test for no winner ")
+TEST_CASE("Test for no winner 3")
 {
-	TicTacToe board;
+	TicTacToeThree board;
 	board.start_game("X");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(1);//X 

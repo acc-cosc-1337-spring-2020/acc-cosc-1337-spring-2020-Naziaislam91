@@ -26,6 +26,7 @@ void TicTacToe::start_game(std::string first_player)
 	if (first_player == "X" || first_player == "O")
 	{
 		player = first_player;
+		
 	}
 	else
 	{
@@ -149,7 +150,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & b) //change for 
 	{
 		for (int i = 0; i < 16; i += 4)
 		{
-			out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "|" << b.pegs[i + 3] << "|" << "\n";
+			out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "|" << b.pegs[i + 3] << "\n";
 		}
 	}
 
