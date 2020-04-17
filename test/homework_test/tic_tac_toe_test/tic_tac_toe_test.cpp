@@ -369,3 +369,159 @@ TEST_CASE("Test win by first row 4")
 	REQUIRE(board.game_over() == true);
 	REQUIRE(board.get_winner() == "X");
 }
+
+TEST_CASE("Test win by second row 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(8);//X  win 
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
+
+TEST_CASE("Test win by third row 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(9);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(10);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(11);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(12);//X  win 
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
+
+TEST_CASE("Test win by fourth row 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(13);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(14);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(15);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(16);//X  win 
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
+TEST_CASE("Test win by diagonal one 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(13);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(10);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//X  win 
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
+
+TEST_CASE("Test win by diagonal two 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(11);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(16);//X  win 
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
+TEST_CASE("Test for no winner in board 4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//O        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//X  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(8);//O  
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(10);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(11);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(12);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(9);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(13);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(14);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(15);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(16);//O
+	// no one wins
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "C");
+}
+
