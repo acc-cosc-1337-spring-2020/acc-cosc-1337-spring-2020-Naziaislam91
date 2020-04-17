@@ -14,7 +14,7 @@ private:
 	bool check_row_win();
 	bool check_diagonal_win();
 
-	std::vector<std::string> pegs{ 9, " " };
+	//std::vector<std::string> pegs{ 9, " " };
 
 };
 

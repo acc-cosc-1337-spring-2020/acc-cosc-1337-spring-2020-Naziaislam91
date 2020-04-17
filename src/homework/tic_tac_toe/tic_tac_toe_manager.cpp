@@ -4,7 +4,7 @@
 
 //cpp
 
-void TicTacToeManager::save_game(const TicTacToe b)
+void TicTacToeManager::save_game( TicTacToe b)
 {
 	games.push_back(b);
 	update_winner_count(b.get_winner());
@@ -35,16 +35,16 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 	int x_win{ 0 }; int o_win{ 0 };
 	int ties{ 0 };
 	
-	for (auto game : manager.games)
+	for (auto &game : manager.games)
 	{
 		out << game;
 		//game.get_winner();
 		
-		if (game.get_winner() == "X")
+		if (game.get().get_winner() == "X")
 		{
 			x_win++;
 		}
-		else if (game.get_winner() == "O")
+		else if (game.get().get_winner() == "O")
 		{
 			o_win++;
 
@@ -56,7 +56,7 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 		
 		//out << "\nX wins: " << x_win << "\n";
 		//out << " O wins: " << o_win << "\n";
-		out << " Tie: " << ties <<"\n";
+		//out << " Tie: " << ties <<"\n";
 		
 	}
 	

@@ -4,7 +4,7 @@
 class TicTacToeFour : public TicTacToe
 {
 public:
-	
+	//TicTacToeFour() = default;
 	TicTacToeFour() : TicTacToe(4) {}
 	
 
@@ -14,7 +14,7 @@ private:
 	bool check_row_win();
 	bool check_diagonal_win();
 
-	std::vector<std::string> pegs{ 16, " " };
+	//std::vector<std::string> pegs{ 16, " " };
 
 };
 

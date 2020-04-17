@@ -9,7 +9,7 @@ class TicTacToe
 {
 	
 public:
-
+	TicTacToe() = default;
 	//SomeConstructor(int s) :some_vector(s*s, " ") {}
 	TicTacToe (int size) : pegs(size*size, " ") {}
 	bool game_over();
@@ -25,7 +25,7 @@ protected:
 	std::vector<std::string> pegs{};
 	virtual bool check_column_win();
 	virtual bool check_row_win();
-	virtual bool check_diagonal_win(); // virtual overriddden function and able change the function.
+	virtual bool check_diagonal_win(); // virtual overriddden function can change derived function.
 
 
 private:
