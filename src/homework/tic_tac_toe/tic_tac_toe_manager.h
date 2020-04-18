@@ -4,7 +4,7 @@
 #include "tic_tac_toe.h"
 #include<iostream>
 #include<string>
-class TicTacToeManager //: public TicTacToe
+class TicTacToeManager : public TicTacToe
 {
 public:
 	void save_game( TicTacToe b);
