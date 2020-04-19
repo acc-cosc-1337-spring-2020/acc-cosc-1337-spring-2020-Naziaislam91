@@ -253,6 +253,21 @@ TEST_CASE("Test for no winner 3")
 	REQUIRE(board.get_winner() == "C");
 	
 }
+// Test Case for 4x4
+TEST_CASE("Test game ends when board is full for 4x4")
+{
+	TicTacToeFour board;
+	board.start_game("X");
+	for (int i = 1; i < 16; ++i)
+	{
+		board.mark_board(i);
+		
+	}
+	board.mark_board(16);
+	REQUIRE(board.game_over() == true);
+
+}
+
 TEST_CASE("Test win by first column 4")
 {
 	TicTacToeFour board;
