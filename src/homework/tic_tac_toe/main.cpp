@@ -96,10 +96,10 @@ int main()
 				winner = four.game_over();
 
 			} while (winner == false);
-			manager->save_game(four);
+			manager->save_game;
 			cout << "\n";
 			cout << four;
-			manager.get_winner_total(x, o, t);
+			manager->get_winner_total(x, o, t);
 			cout << "The Winner is: " << four.get_winner();
 			cout << "\n";
 			
