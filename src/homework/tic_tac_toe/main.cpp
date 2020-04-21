@@ -6,11 +6,13 @@
 #include <iostream>
 #include <vector>
 #include<string>
+#include <memory>
 using std::cout; using std::cin;
+using std::unique_ptr; using std::make_unique;
 int main()
 {
 	std::string choice;
-	TicTacToeManager manager;
+	unique_ptr<TicTacToeManager> manager;
 	do
 	{
 		int player;
@@ -53,11 +55,11 @@ int main()
 				winner = Three.game_over();
 
 			} while (winner == false);
-			manager.save_game(Three);
+			manager->save_game; //changed this from manager.save_game(Three)
 			cout << "\n";
 			cout << Three;
 			
-			manager.get_winner_total(x, o, t);
+			manager->get_winner_total(x, o, t);
 			cout << "The Winner is: " << Three.get_winner();
 			cout << "\n";
 			
@@ -94,7 +96,7 @@ int main()
 				winner = four.game_over();
 
 			} while (winner == false);
-			manager.save_game(four);
+			manager->save_game(four);
 			cout << "\n";
 			cout << four;
 			manager.get_winner_total(x, o, t);

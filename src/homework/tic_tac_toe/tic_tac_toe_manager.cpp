@@ -4,10 +4,10 @@
 
 //cpp
 
-void TicTacToeManager::save_game( TicTacToe b)
+void TicTacToeManager::save_game(unique_ptr<TicTacToe> &b)
 {
-	games.push_back(b);
-	update_winner_count(b.get_winner());
+	std::move(games).push_back(b);
+	update_winner_count(b->get_winner());
 
 }
 
@@ -40,16 +40,16 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 		//out << game;
 		//game.get_winner();
 		
-		if (game.get().get_winner() == "X")
+		if (game->get_winner() == "X")
 		{
 			x_win++;
 		}
-		else if (game.get().get_winner() == "O")
+		else if (game->get_winner() == "O")
 		{
 			o_win++;
 
 		}
-		else if (game.get().get_winner() == "C")
+		else if (game->get_winner() == "C")
 		{
 			ties++;
 		}
