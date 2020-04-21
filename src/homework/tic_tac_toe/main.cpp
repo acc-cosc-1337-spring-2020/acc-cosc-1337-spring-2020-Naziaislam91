@@ -12,9 +12,11 @@ using std::unique_ptr; using std::make_unique;
 int main()
 {
 	std::string choice;
-	unique_ptr<TicTacToeManager> manager;
+	
+	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>();
 	do
 	{
+		unique_ptr<TicTacToe> game;
 		int player;
 		std::string firstplayer;
 		bool winner;
@@ -22,15 +24,15 @@ int main()
 		int o;
 		int t;
 		
-		std::vector<std::reference_wrapper<TicTacToe>> games;
+		//std::vector<std::reference_wrapper<TicTacToe>> games;
 		cout << "Please enter 3 or 4 to play the game: ";
 		cin >> player;
-
+		/*
 		if (player == 3)
 		{
-			TicTacToeThree Three;
+			TicTacToeThree* Three = new TicTacToeThree();
 			
-			games.push_back(Three);
+			games->push_back(Three);
 
 			while (!(firstplayer == "X" || firstplayer == "O"))
 			{
@@ -59,17 +61,17 @@ int main()
 			cout << "\n";
 			cout << Three;
 			
-			manager->get_winner_total(x, o, t);
+			manager->get_winner_total(x, o, t); //homework 10
 			cout << "The Winner is: " << Three.get_winner();
 			cout << "\n";
 			
-			
+			delete  Three;
 
 
 		}
 		else if (player == 4)
 		{
-			TicTacToeFour four;
+			TicTacToeFour* four = new TicTacToeFour();
 			
 			games.push_back(four);
 
@@ -96,15 +98,15 @@ int main()
 				winner = four.game_over();
 
 			} while (winner == false);
-			manager->save_game;
+			manager->save_game; //homework 10
 			cout << "\n";
 			cout << four;
-			manager->get_winner_total(x, o, t);
+			manager->get_winner_total(x, o, t); //homework 10
 			cout << "The Winner is: " << four.get_winner();
 			cout << "\n";
 			
-
-		}
+			delete four;
+		}*/
 		cout << "Do you want to continue: " << "\n";
 		cin >> choice;
 	} while (choice == "Y" || choice == "y");
