@@ -17,7 +17,7 @@ int main()
 	
 	do
 	{
-		unique_ptr<TicTacToe> game;
+		
 		int player;
 		std::string firstplayer;
 		bool winner;
@@ -29,7 +29,7 @@ int main()
 		//std::vector<std::reference_wrapper<TicTacToe>> games;
 		cout << "Please enter 3 or 4 to play the game: ";
 		cin >> player;
-		
+		unique_ptr<TicTacToe> game;
 		if (player == 3)
 		{
 			
@@ -44,90 +44,23 @@ int main()
 		}
 
 
-
-
-			/*TicTacToeThree* Three = new TicTacToeThree();
-			
-			games->push_back(Three);
-
-			while (!(firstplayer == "X" || firstplayer == "O"))
-			{
-				try
-				{
-					cout << "The first player as X or O: " << "\n";
-					cin >> firstplayer;
-					Three.start_game(firstplayer);
-				}
-				catch (Error e)
-				{
-					cout << e.get_message() << "\n";
-				}
-
-
-
-			}
-			do
-			{
-				cin >> Three;
-				cout << Three;
-				winner = Three.game_over();
-
-			} while (winner == false);
-			manager->save_game; //changed this from manager.save_game(Three)
-			cout << "\n";
-			cout << Three;
-			
-			manager->get_winner_total(x, o, t); //homework 10
-			cout << "The Winner is: " << Three.get_winner();
-			cout << "\n";
-			
-			delete  Three;
-
-
-		}
-		else if (player == 4)
+		cout << "The first player as X or O: " << "\n";
+		cin >> firstplayer;
+		game ->start_game(firstplayer);
+		while (game->game_over() == false)
 		{
-			TicTacToeFour* four = new TicTacToeFour();
-			
-			games.push_back(four);
+			cin >> *game;
+			cout << *game;
+		}
+		manager->save_game(game);
+		cout << "Game over" << "\n";
+		manager->get_winner_total(x, o, t);
 
-			while (!(firstplayer == "X" || firstplayer == "O"))
-			{
-				try
-				{
-					cout << "The first player as X or O: " << "\n";
-					cin >> firstplayer;
-					four.start_game(firstplayer);
-				}
-				catch (Error e)
-				{
-					cout << e.get_message() << "\n";
-				}
-
-
-
-			}
-			do
-			{
-				cin >> four;
-				cout << four;
-				winner = four.game_over();
-
-			} while (winner == false);
-			manager->save_game; //homework 10
-			cout << "\n";
-			cout << four;
-			manager->get_winner_total(x, o, t); //homework 10
-			cout << "The Winner is: " << four.get_winner();
-			cout << "\n";
-			
-			delete four;
-		}*/
-		//delete game;
+		
 		cout << "Do you want to continue: " << "\n";
 		cin >> choice;
 	} while (choice == "Y" || choice == "y");
-	cout << manager;
+	cout << *manager;
 	
 	return 0;
 }
