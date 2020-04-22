@@ -14,6 +14,7 @@ int main()
 	std::string choice;
 	
 	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>();
+	
 	do
 	{
 		unique_ptr<TicTacToe> game;
@@ -23,14 +24,29 @@ int main()
 		int x;
 		int o;
 		int t;
-		
+		//TicTacToe* game = new TicTacToeThree();
+		//TicTacToe* game = new TicTacToeFour();
 		//std::vector<std::reference_wrapper<TicTacToe>> games;
 		cout << "Please enter 3 or 4 to play the game: ";
 		cin >> player;
-		/*
+		
 		if (player == 3)
 		{
-			TicTacToeThree* Three = new TicTacToeThree();
+			
+			game = std::make_unique<TicTacToeThree>();
+			
+		}
+		else if (player == 4)
+		{
+			
+			game = std::make_unique<TicTacToeFour>();
+			
+		}
+
+
+
+
+			/*TicTacToeThree* Three = new TicTacToeThree();
 			
 			games->push_back(Three);
 
@@ -107,6 +123,7 @@ int main()
 			
 			delete four;
 		}*/
+		//delete game;
 		cout << "Do you want to continue: " << "\n";
 		cin >> choice;
 	} while (choice == "Y" || choice == "y");

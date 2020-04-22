@@ -1,6 +1,9 @@
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include<iostream>
 #include<string>
+
 
 //cpp
 
@@ -68,4 +71,16 @@ void TicTacToeManager::get_winner_total(int & x, int& o, int& t)
 	std::cout << "X wins: " << x_win << "\n";
 	std::cout << "O wins: " << o_win << "\n";
 	std::cout << "Tie: " << ties << "\n";
+}
+
+unique_ptr<TicTacToe> TicTacToeManager::get_game(int player)
+{
+	if (player == 3)
+	{
+		return std::unique_ptr<TicTacToeThree>();
+	}
+	else if (player == 4)
+	{
+		return unique_ptr<TicTacToeFour>();
+	}
 }
