@@ -26,7 +26,6 @@ int main()
 		int t;
 		//TicTacToe* game = new TicTacToeThree();
 		//TicTacToe* game = new TicTacToeFour();
-		//std::vector<std::reference_wrapper<TicTacToe>> games;
 		cout << "Please enter 3 or 4 to play the game: ";
 		cin >> player;
 		unique_ptr<TicTacToe> game;
