@@ -58,10 +58,7 @@ std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager
 			ties++;
 		}
 		
-		//out << "X wins: " << x_win << "\n";
-		//out << "O wins: " << o_win << "\n";
-		//out << "Tie: " << ties <<"\n";
-		
+	
 	}
 	
 	return out;
