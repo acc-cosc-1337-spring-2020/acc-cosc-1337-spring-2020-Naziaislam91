@@ -74,14 +74,4 @@ void TicTacToeManager::get_winner_total(int & x, int& o, int& t)
 	std::cout << "Tie: " << ties << "\n";
 }
 
-unique_ptr<TicTacToe> TicTacToeManager::get_game(int player)
-{
-	if (player == 3)
-	{
-		return std::unique_ptr<TicTacToeThree>();
-	}
-	else if (player == 4)
-	{
-		return unique_ptr<TicTacToeFour>();
-	}
-}
+
