@@ -41,11 +41,22 @@ int main()
 			game = std::make_unique<TicTacToeFour>();
 			
 		}
+		while (!(firstplayer == "X" || firstplayer == "O"))
+		{
 
+			try
+			{
+				cout << "The first player as X or O: " << "\n";
+				cin >> firstplayer;
+				game->start_game(firstplayer);
+			}
 
-		cout << "The first player as X or O: " << "\n";
-		cin >> firstplayer;
-		game ->start_game(firstplayer);
+			catch (Error e)
+			{
+				cout << e.get_message() << "\n";
+			}
+		}
+		
 		while (game->game_over() == false)
 		{
 			cin >> *game;
