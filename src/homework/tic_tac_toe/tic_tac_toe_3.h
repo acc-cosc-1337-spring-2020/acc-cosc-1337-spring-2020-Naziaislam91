@@ -6,6 +6,7 @@ class TicTacToeThree : public TicTacToe
 public:
 	//TicTacToeThree() = default; // default constructor
 	TicTacToeThree() : TicTacToe(3) {}
+	TicTacToeThree(std::vector<string> p, string winner) :TicTacToe (p, winner) {}
 
 
 

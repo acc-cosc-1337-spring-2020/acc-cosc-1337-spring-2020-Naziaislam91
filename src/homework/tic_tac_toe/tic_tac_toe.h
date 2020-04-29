@@ -13,19 +13,22 @@ public:
 	TicTacToe() : pegs(9, " ") {};
 
 	TicTacToe (int size) : pegs(size*size, " ") {}
+	TicTacToe(std::vector<string> p, string win) : pegs{ p }, winner{ win } {} //parameterized constructor initializing pegs of vector and winner
 	bool game_over();
 	void start_game(std::string first_player);
 	void mark_board(int position);
 
 	std::string get_player()const { return player; }
 	std::string get_winner()const { return winner; }
+	std::vector<string>get_pegs()const {return pegs;}
 	
 	friend std::istream & operator>>(std::istream & in, TicTacToe & b);
 	friend std::ostream & operator<<(std::ostream & out, const TicTacToe & b);
-
+	//std::vector<std::string> pegs{};
 
 
 protected:
+	//TicTacToe(std::vector<string> p, string win) : pegs{ p }, winner{ win } {}
 	std::vector<std::string> pegs{};
 	virtual bool check_column_win() = 0; //pure virtual function needs = 0 so it became abstract class
 	virtual bool check_row_win() = 0;

@@ -7,7 +7,8 @@ public:
 	//TicTacToeFour() = default;
 	//std::vector<std::string> pegs{ 16, " " };
 	TicTacToeFour() : TicTacToe(4) {}
-	
+	TicTacToeFour(std::vector<string> p, string winner) :TicTacToe(p, winner) {}
+
 
 
 private:
