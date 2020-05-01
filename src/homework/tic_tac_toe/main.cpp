@@ -2,6 +2,7 @@
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_data.h"
 
 #include <iostream>
 #include <vector>
@@ -12,8 +13,8 @@ using std::unique_ptr; using std::make_unique;
 int main()
 {
 	std::string choice;
-	
-	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>();
+	TicTacToeData* data;
+	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>(data);
 	
 	do
 	{
@@ -63,7 +64,7 @@ int main()
 			cout << *game;
 		}
 		manager->save_game(game);
-		cout << "Game over" << "\n";
+		cout << "Result" << game->get_winner() <<"\n";
 		manager->get_winner_total(x, o, t);
 
 		

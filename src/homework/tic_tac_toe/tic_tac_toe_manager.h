@@ -7,12 +7,13 @@
 #include<string>
 #include<memory>
 using std::unique_ptr; using std::make_unique;
-class TicTacToeManager : public TicTacToe
+class TicTacToeManager //: public TicTacToe
 {
 public:
 	TicTacToeManager() = default;
-	explicit TicTacToeManager(TicTacToeData); 
+	//TicTacToeManager(TicTacToeData & data); 
 	~TicTacToeManager();
+
 	void save_game(unique_ptr<TicTacToe> &game);
 	friend std::ostream & operator << (std::ostream & out, const TicTacToeManager & manager);
 	void get_winner_total(int & x, int& o, int& t);

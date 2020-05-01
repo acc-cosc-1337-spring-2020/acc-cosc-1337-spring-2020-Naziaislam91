@@ -1,12 +1,13 @@
-#include "tic_tac_toe.h"//h
+//h
 #ifndef TicTacToe_four_H 
 #define TicTacToe_four_H 
+#include "tic_tac_toe.h"
 class TicTacToeFour : public TicTacToe
 {
 public:
-	//TicTacToeFour() = default;
+	TicTacToeFour() = default;
 	//std::vector<std::string> pegs{ 16, " " };
-	TicTacToeFour() : TicTacToe(4) {}
+	//TicTacToeFour() : TicTacToe(4) {}
 	TicTacToeFour(std::vector<string> p, string winner) :TicTacToe(p, winner) {}
 
 

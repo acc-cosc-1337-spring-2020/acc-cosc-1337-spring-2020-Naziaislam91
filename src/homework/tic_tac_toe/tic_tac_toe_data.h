@@ -6,11 +6,11 @@
 #include<string>
 #include<iostream>
 
-class TicTacToeData : public TicTacToe
+class TicTacToeData :  TicTacToe
 {
 public:
 
-	void save_pegs(const std::vector<string>& pgs);
+	void save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs);
 	std::vector<std::unique_ptr<TicTacToe>> get_games();
 
 private:

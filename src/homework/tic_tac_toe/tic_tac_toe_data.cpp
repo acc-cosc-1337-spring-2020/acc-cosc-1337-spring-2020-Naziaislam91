@@ -1,19 +1,21 @@
 #include"tic_tac_toe_data.h"
 #include "tic_tac_toe_3.h"
-#include "tic_tac_toe_4.h"//cpp
+#include "tic_tac_toe_4.h"
+#include "tic_tac_toe.h"//cpp
 
-void TicTacToeData::save_pegs(const std::vector<string>& pgs)
+void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs)
 {
 
 	std::ofstream file_out(file_name, std::ios_base::trunc);
-	for (auto pegs : pgs)
+
+	for (auto &game : pgs)
 	{
-		for (auto ch : pgs)
+		for (auto &ch : pgs)
 		{
-			file_out << " ";
+			file_out << *ch;
 		}
 		
-		file_out << get_winner();
+		file_out << game->get_winner();
 		file_out << "\n";
 
 	}
@@ -27,37 +29,44 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
 
 
-	std::ifstream open_file("TicTacToe.dat");
-	std::unique_ptr<TicTacToe> boards;
+	std::ifstream open_file("TicTacToe.dat"); //look
+	//auto boards = std::unique_ptr<std::vector<TicTacToe>>();
+	//auto boards = std::unique_ptr<std::vector<TicTacToe>>(new std::vector<TicTacToe>);
+	//std::unique_ptr<std::vector<TicTacToe>> boards;
+	//auto boards = std::unique_ptr<std::vector<std::unique_ptr <TicTacToe>>>(new std::vector<std::unique_ptr <TicTacToe>>);
+	 std::vector<std::unique_ptr<TicTacToe>> boards;
+	 std::vector<string> pegs;
+	 std::string line;
 
-	while (open_file.is_open())
-	{
-		std::vector<string> pegs{};
-		std::string line;
-		while (getline(open_file, line))
-		{
+	 while (open_file.is_open())
+	 {
 
-			for (auto ch=0; ch<line.size-1; ch++)
-			{
-				string string(1, ch);
-				pegs.push_back(string);
+		 while (getline(open_file, line))
+		 {
 
-			}
-			string winner = pegs[-1];
+			 for (auto &ch : line)
+			 {
+				 string string(1, ch);
+				 pegs.push_back(line);
+
+			 }
+		 }
+	 }
+			std::string winner;
 			std::unique_ptr<TicTacToe> board;
 			if (pegs.size() == 9)
 			{
-				board = std::make_unique<TicTacToeThree>(pegs, winner);
+				std::unique_ptr <TicTacToeThree> board = std::make_unique<TicTacToeThree>(pegs, winner);
 			}
 			else if (pegs.size() == 16)
 			{
-				board = std::make_unique<TicTacToeFour>(pegs, winner);
+				std::unique_ptr <TicTacToeFour> board = std::make_unique<TicTacToeFour>(pegs, winner);
 			}
-			//boards.push_back(board);
-		}
+			boards.push_back(board);
 		
-	}
+		
+	
 	open_file.close();
 
-	//return boards;
+	return boards;
 }
