@@ -30,10 +30,11 @@ public:
 protected:
 	//TicTacToe(std::vector<string> p, string win) : pegs{ p }, winner{ win } {}
 	std::vector<std::string> pegs{};
+	//std::string get_winner() { return winner; }
 	virtual bool check_column_win(); //pure virtual function needs = 0 so it became abstract class
 	virtual bool check_row_win();
 	virtual bool check_diagonal_win(); // virtual overriddden function can change derived function.
-
+	std::string winner; //change homework 11
 
 private:
 	bool check_board_full();
@@ -41,7 +42,7 @@ private:
 	void clear_board();
 	void set_next_player();
 
-	std::string winner;
+	//std::string winner;
 	std::string player;
 
 	//bool check_column_win();
